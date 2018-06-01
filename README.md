@@ -1,16 +1,10 @@
 # Bookmarklet
 
-## 
-
-
 ## Re:dash json valueの一括展開
 
 ```
-javascript:(function(){ const s = document.createElement('script'); s.src = 'https://....'; document.body.appendChild(s); })();
+javascript:(function(){ const s = document.createElement('script'); s.src = 'https://github.com/swfz/bookmarklets/blob/master/bookmarklets/redash_json_value_open.txt'; document.body.appendChild(s); })();
 ```
-
-
-
 
 # development
 
@@ -18,6 +12,5 @@ javascript:(function(){ const s = document.createElement('script'); s.src = 'htt
 thin start --ssl -R app.ru
 ```
 
-
-
+サーバへアクセスするとこのREADMEのホストをプライベートIPに変えたものが出力されるのでそれをブックマークに登録して開発する
 
