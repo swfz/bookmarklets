@@ -6,6 +6,8 @@
 javascript:(function(){ const s = document.createElement('script'); s.src = 'https://github.com/swfz/bookmarklets/blob/master/bookmarklets/redash_json_value_open.js'; document.body.appendChild(s); })();
 ```
 
+![text]('images/redash_json_value_open.gif' "alt")
+
 # development
 
 ```
