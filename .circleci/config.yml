@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/classic:201708-01
+      - image: circleci/python:latest
     working_directory: ~/bookmarklets
     steps:
       - checkout
