@@ -7,5 +7,7 @@ jobs:
     steps:
       - checkout
       - deploy:
-          command: aws s3 sync bookmarklets s3://swfz-bookmarklets/bookmarklets/ --delete
+          command: |
+            apt-get install -y awscli
+            aws s3 sync bookmarklets s3://swfz-bookmarklets/bookmarklets/ --delete
 
