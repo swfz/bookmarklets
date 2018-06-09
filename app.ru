@@ -2,7 +2,7 @@
 
 class SimpleServer
   def call(env)
-    contents = File.open('./README.md', 'r:utf-8').read.gsub(/github.com\/swfz\/bookmarklets\/blob\/master\/bookmarklets/,"#{env['HTTP_HOST']}/bookmarklets")
+    contents = File.open('./README.md', 'r:utf-8').read.gsub(/d1i7g5i1n6yjvy.cloudfront.net\/bookmarklets/,"#{env['HTTP_HOST']}/bookmarklets")
     p contents.encoding
     [
       200,

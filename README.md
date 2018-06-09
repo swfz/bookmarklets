@@ -3,7 +3,7 @@
 ## Re:dash json valueの一括展開
 
 ```
-javascript:(function(){ const s = document.createElement('script'); s.src = 'https://rawgithub.com/swfz/bookmarklets/master/bookmarklets/redash_json_value_open.js'; document.body.appendChild(s); })();
+javascript:(function(){ const s = document.createElement('script'); s.src = 'https://d1i7g5i1n6yjvy.cloudfront.net/bookmarklets/redash_json_value_open.js'; document.body.appendChild(s); })();
 ```
 
 ![text](images/redash_json_value_open.gif "alt")
