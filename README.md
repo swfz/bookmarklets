@@ -33,6 +33,8 @@ javascript:(function(){ const s = document.createElement('script'); s.src = 'htt
 
 `3.`とセット、こちらは流す側
 
+![イメージ図](images/google_slide_usertool.gif "alt")
+
 # development
 
 ```
@@ -40,4 +42,5 @@ thin start --ssl -R app.ru
 ```
 
 サーバへアクセスするとこのREADMEのホストをプライベートIPに変えたものが出力されるのでそれをブックマークに登録して開発する
+
 
