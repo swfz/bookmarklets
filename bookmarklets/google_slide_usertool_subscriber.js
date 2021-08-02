@@ -8,10 +8,10 @@ const extractComment = (mutationRecords) => {
   return comments;
 }
 
-const elementToObserve = document.querySelector('.punch-viewer-speaker-questions');
+const observeElement = document.querySelector('.punch-viewer-speaker-questions');
 const observer = new MutationObserver(function(records) {
   console.log(records);console.log('callback that runs when observer is triggered');
   broadcastChannel.postMessage(extractComment(records));
 });
 
-observer.observe(elementToObserve, {subtree: true, childList: true});
+observer.observe(observeElement, {subtree: true, childList: true});
