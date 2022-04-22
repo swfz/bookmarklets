@@ -1,16 +1,17 @@
 const broadcastChannel = new BroadcastChannel('comment_channel');
 
 const addComment = (comment) => {
-  console.log(comment);
-
   const element = document.createElement("p");
   element.innerText = comment;
 
   const boxElement = document.querySelector('.punch-present-iframe').contentWindow.document.querySelector('.punch-viewer-content');
   boxElement.appendChild(element);
 
-  const elementTop = (boxElement.clientHeight - element.clientHeight) * Math.random();
-  console.log(elementTop);
+  const beltPerContainer = 0.12;
+  const containerHeight = boxElement.clientHeight * (1 - beltPerContainer);
+
+  const random = Math.random();
+  const elementTop = ((containerHeight - element.clientHeight) * random);
 
   const moveUnit = 5;
   const windowWidth = document.body.clientWidth;
