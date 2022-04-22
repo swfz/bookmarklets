@@ -37,10 +37,25 @@ javascript:(function(){ const s = document.createElement('script'); s.src = 'htt
 
 # development
 
-```
-thin start --ssl -R app.ru
+```shell
+$ openssl genrsa 2048 > localhost.key
+$ openssl req -new -x509 -nodes -sha256 -days 365 -key localhost.key -out localhost.crt
+
+Country Name (2 letter code) [AU]:
+...
+Common Name: localhost
+...
+
+$ thin start --ssl --ssl-disable-verify --ssl-key-file=localhost.key --ssl-cert-file=localhost.crt -R app.ru
 ```
 
 サーバへアクセスするとこのREADMEのホストをプライベートIPに変えたものが出力されるのでそれをブックマークに登録して開発する
 
+# deploy
 
+```
+$ aws s3 sync bookmarklets s3://swfz-bookmarklets/bookmarklets/ --delete
+$ export DISTRIBUTION_ID=$(aws cloudfront list-distributions --query 'DistributionList.Items[]' | jq -r '.[]|select(.DomainName="d1i7g5i1n6yjvy.cloudfront.net")|.Id')
+$ export INVALIDATION_ID=$(aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths "/*" | jq -r '.Invalidation.Id')
+$ aws cloudfront get-invalidation --distribution-id ${DISTRIBUTION_ID} --id ${INVALIDATION_ID}
+```
